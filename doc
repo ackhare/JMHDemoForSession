@@ -1,0 +1,24 @@
+1)A JMH microbenchmark is a plain Java class.
+Each microbenchmark is implemented as a method that is annotated with @Benchmark
+
+2)JMH implements multiple annotation processors that generate the final microbenchmark class.
+ This generated class contains setup and measurement code as well as code that's required
+ to minimize unwanted optimizations of the JIT compiler in the microbenchmark.
+
+3) As you can see, JMH generates one class per method that is annotated with @Benchmark but that is transparent to JMH users.
+  JMH contains a Runner class somewhat similar to JUnit so it is  possible to run embedded microbenchmarks using
+   the JMH Java API.
+
+4)For each for fork, it runs n warmup iterations (shown in blue in the picture below),
+which do not get measured and are just needed to reach steady state before m iterations
+ are run (shown in red in the picture below). In this example,
+  n is 20 and m is 20 but you can change this with command line parameters.
+
+5)The two most important measures are "score" (which is the mean for the throughput benchmarking mode)
+ which allows you to estimate the performance of the benchmarked code and the "score error"
+ which allows you to estimate the "noisyness" of the measurements taken by the microbenchmark.
+
+6)
+
+
+
