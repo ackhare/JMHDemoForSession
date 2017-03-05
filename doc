@@ -16,7 +16,7 @@ which do not get measured and are just needed to reach steady state before m ite
 
 5)The two most important measures are "score" (which is the mean for the throughput benchmarking mode)
  which allows you to estimate the performance of the benchmarked code and the "score error"
- which allows you to estimate the "noisyness" of the measurements taken by the microbenchmark.
+ which allows you to estimate the "noisyness" of the measurements taken by the microbenchmark.(see pic1.png)
 
 6)
 
