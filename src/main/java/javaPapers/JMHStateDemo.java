@@ -25,8 +25,6 @@ public class JMHStateDemo {
     @BenchmarkMode(Mode.Throughput)
     @OutputTimeUnit(TimeUnit.MINUTES)
     public void testMethod(MyState state) {
-        //System.out.println("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
-
         state.sum = state.a + state.b;
     }
 
