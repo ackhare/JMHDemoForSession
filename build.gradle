@@ -5,23 +5,23 @@ version '1.0-SNAPSHOT'
  * This is a minimalistic Gradle build script to demonstrate proper integration with JMH. JMH includes corresponding
  * Maven build scripts in the example project; see http://hg.openjdk.java.net/code-tools/jmh/file/86072ed4c056/jmh-samples/pom.xml
  */
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath "com.github.jengelman.gradle.plugins:shadow:1.2.3"
-    }
-}
+//buildscript {
+//    repositories {
+//        jcenter()
+//    }
+//
+//    dependencies {
+//        classpath "com.github.jengelman.gradle.plugins:shadow:1.2.3"
+//    }
+//}
 
 version = '0.1.0'
 
 apply plugin: 'java'
-apply plugin: 'application'
+//apply plugin: 'application'
 
 apply plugin: 'idea'
-apply plugin: "com.github.johnrengelman.shadow"
+//apply plugin: "com.github.johnrengelman.shadow"
 
 
 sourceCompatibility = 1.8
@@ -32,7 +32,7 @@ targetCompatibility = 1.8
 configurations {
     provided
 }
-
+//
 sourceSets {
     main.compileClasspath += configurations.provided
     test.compileClasspath += configurations.provided
@@ -43,7 +43,7 @@ repositories {
     mavenCentral()
 }
 
-ext.jmhVersion = '1.9.3'
+ext.jmhVersion = '1.10.3'
 
 dependencies {
     compile "org.openjdk.jmh:jmh-core:$jmhVersion"
@@ -52,16 +52,16 @@ dependencies {
     compile 'org.apache.commons:commons-lang3:3.2.1'
 }
 
-idea {
-    module {
-        // support provided scope in IDEA:
-        // See also http://www.gradle.org/docs/current/dsl/org.gradle.plugins.ide.idea.model.IdeaModule.html
-        scopes.PROVIDED.plus += [configurations.provided]
-        //avoid duplicate entries in provided scope (i.e. jmh-core)
-        //scopes.PROVIDED.minus += [configurations.compile]
-        downloadSources = true
-    }
-}
+//idea {
+//    module {
+//        // support provided scope in IDEA:
+//        // See also http://www.gradle.org/docs/current/dsl/org.gradle.plugins.ide.idea.model.IdeaModule.html
+//        scopes.PROVIDED.plus += [configurations.provided]
+//        //avoid duplicate entries in provided scope (i.e. jmh-core)
+//        //scopes.PROVIDED.minus += [configurations.compile]
+//        downloadSources = true
+//    }
+//}
 
 // see https://github.com/johnrengelman/shadow/issues/130
-mainClassName = 'org.openjdk.jmh.Main'
+//mainClassName = 'org.openjdk.jmh.Main'
